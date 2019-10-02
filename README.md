@@ -49,7 +49,7 @@ And then you can just open [http://127.0.0.1:8080](http://127.0.0.1:8080) and it
 Run with docker
 
 ```shell
-docker run -it -p 8080:8080 -v $(pwd)/slides:/app/slides msoedov/hacker-slides
+docker run -it -p 8080:8080 -v $(pwd)/slides:/srv/slides msoedov/hacker-slides
 ```
 
 Protect slides with password
@@ -66,18 +66,18 @@ WARN[0000] Visit http://bob:password1@0.0.0.0:8080
 ```
 
 ```shell
-docker run -it -p 8080:8080 -e USER=bob -e PASSWORD=password1 -v $(pwd)/slides:/app/slides msoedov/hacker-slides
+docker run -it -p 8080:8080 -e USER=bob -e PASSWORD=password1 -v $(pwd)/slides:/srv/slides msoedov/hacker-slides
 ```
 
 Use local images
 ----
 Store pictures you want to use in the images subfolder, slides/images/ and reference them in the editor as Markdown:
 ```
-![demoPicture](/images/demo.png)
+![demoPicture](slides/images/demo.png)
 ```
 or as HTML:
 ```
-<img src="/images/demo.png">
+<img src="slides/images/demo.png">
 ```
 
 Getting Help
